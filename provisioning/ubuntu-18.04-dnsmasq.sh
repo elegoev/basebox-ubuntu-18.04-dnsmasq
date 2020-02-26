@@ -53,7 +53,7 @@ echo -e "${GREEN}#################################${NC}"
 DATE=`date +%Y%m%d%H%M`
 
 # set version
-DNSMASQ_VERSION=$(dnsmasq --version | awk  '{print $3}')
+DNSMASQ_VERSION=$(dnsmasq --version | grep "Dnsmasq version" | awk  '{print $3}')
 echo "$DNSMASQ_VERSION" > /vagrant/version
 
 echo -e "${BLUE}#################################${NC}"
