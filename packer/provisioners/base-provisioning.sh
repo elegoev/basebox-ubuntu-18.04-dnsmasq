@@ -1,10 +1,10 @@
 #!/bin/bash
 
-provision_dir="/home/vagrant/provision"
+provision_dir="/home/vagrant/files-prov"
 
 # install dnsmasq
 sudo apt-get install -y dnsmasq
-sudo cp $provision_dir/files/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf
+sudo cp $provision_dir/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf
 
 # disable systemd-resolved
 resolve_file="/etc/resolv.conf"
@@ -13,7 +13,7 @@ sudo systemctl stop systemd-resolved
 sudo rm $resolve_file
 
 # create resolve.conf
-sudo cp  $provision_dir/files/dnsmasq/resolv.conf $resolve_file
+sudo cp  $provision_dir/dnsmasq/resolv.conf $resolve_file
 sudo chattr +i $resolve_file
 sudo lsattr $resolve_file
 

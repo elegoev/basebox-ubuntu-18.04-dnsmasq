@@ -241,7 +241,7 @@ function  pageLoaded() {
   <table class="control-metadata info" id="control-metadata-dnsmasq-1.0">
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     <tr class="title"><th>Title:</th><td>check if dnsmasq is installed</td></tr> 
-    <tr class="desc"><th>Description:</th><td>check dnsmasq</td></tr> 
+    <tr class="desc"><th>Description:</th><td>check dnsmasq service</td></tr> 
     <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
     
     
@@ -255,7 +255,7 @@ function  pageLoaded() {
 control "dnsmasq-1.0" do                    # A unique ID for this control
   impact 1.0                                # The criticality, if this control fails.
   title "check if dnsmasq is installed"     # A human-readable title
-  desc "check dnsmasq"
+  desc "check dnsmasq service"
   describe packages(/dnsmasq/) do           # The actual test
     its('statuses') { should cmp 'installed' } 
   end
@@ -278,7 +278,134 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.000264 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0002401 seconds</td></tr>
+  </table>
+</div>
+
+  
+
+</div>
+
+    
+      
+
+
+<div class="control control-status-passed" id="control-dnsmasq-2.0">
+
+  
+
+  <h3 class="control-title">Control <code>dnsmasq-2.0</code></h3>
+  <table class="control-metadata info" id="control-metadata-dnsmasq-2.0">
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    <tr class="title"><th>Title:</th><td>check dnsmasq configuration</td></tr> 
+    <tr class="desc"><th>Description:</th><td>check dnsmasq configuration</td></tr> 
+    <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
+    
+    
+    <tr class="code">
+      <th>Source Code:</th>
+      <td>
+        <input type="button" class="show-source-code" id="show-code-dnsmasq-2.0" value="Show Source"/>
+        <input type="button" class="hide-source-code hidden" id="hide-code-dnsmasq-2.0" value="Hide Source"/>
+        <pre class="source-code hidden" id="source-code-dnsmasq-2.0">
+          <code>
+control "dnsmasq-2.0" do                    
+  impact 1.0                                
+  title "check dnsmasq configuration"     
+  desc "check dnsmasq configuration"
+  describe command('sudo dnsmasq --test') do
+    its('stderr') { should eq "dnsmasq: syntax check OK.\n" }
+    its('exit_status') { should eq 0 }
+  end
+end
+
+          </code>
+        </pre>
+      </td>
+    </tr>
+  <!-- TODO waiver data -->
+
+  </table>
+
+  
+    
+<div class="result" id="result-Command___sudo_dnsmasq___test_">
+  <h4 class="resource-title">Resource <code>Command: `sudo dnsmasq --test`</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>stderr is expected to eq "dnsmasq: syntax check OK.\n"</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>0.0401592 seconds</td></tr>
+  </table>
+</div>
+
+  
+    
+<div class="result" id="result-Command___sudo_dnsmasq___test_">
+  <h4 class="resource-title">Resource <code>Command: `sudo dnsmasq --test`</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>exit_status is expected to eq 0</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>0.0001931 seconds</td></tr>
+  </table>
+</div>
+
+  
+
+</div>
+
+    
+      
+
+
+<div class="control control-status-passed" id="control-dnsmasq-3.0">
+
+  
+
+  <h3 class="control-title">Control <code>dnsmasq-3.0</code></h3>
+  <table class="control-metadata info" id="control-metadata-dnsmasq-3.0">
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    <tr class="title"><th>Title:</th><td>check dnsmasq port</td></tr> 
+    <tr class="desc"><th>Description:</th><td>check dnsmasq port</td></tr> 
+    <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
+    
+    
+    <tr class="code">
+      <th>Source Code:</th>
+      <td>
+        <input type="button" class="show-source-code" id="show-code-dnsmasq-3.0" value="Show Source"/>
+        <input type="button" class="hide-source-code hidden" id="hide-code-dnsmasq-3.0" value="Hide Source"/>
+        <pre class="source-code hidden" id="source-code-dnsmasq-3.0">
+          <code>
+control "dnsmasq-3.0" do                    
+  impact 1.0                                
+  title "check dnsmasq port"     
+  desc "check dnsmasq port"
+  describe port(53) do
+    it { should be_listening }
+  end
+end
+          </code>
+        </pre>
+      </td>
+    </tr>
+  <!-- TODO waiver data -->
+
+  </table>
+
+  
+    
+<div class="result" id="result-Port_53">
+  <h4 class="resource-title">Resource <code>Port 53</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be listening</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>0.1392123 seconds</td></tr>
   </table>
 </div>
 
@@ -335,7 +462,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.1163071 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.097833 seconds</td></tr>
   </table>
 </div>
 
@@ -392,7 +519,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0481142 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0418904 seconds</td></tr>
   </table>
 </div>
 
@@ -411,15 +538,15 @@ end
         <tr><th colspan=2><h4 id="platform-label">Platform Information</h4></th></tr>
         <tr class= "name"><th>Name:</th><td>ubuntu</td></tr>
         <tr class= "release"><th>Release:</th><td>18.04</td></tr>
-        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-1909\cxtla@127.0.0.1:51289</td></tr>
+        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-1909\cxtla@127.0.0.1:54002</td></tr>
       </table>
       <table id="statistics" class="info">
         <tr><th colspan="2"><h4 id="statistics-label">Control Statistics</h4></th></tr>
-        <tr class= "passed"><th>Passed:</th><td>3</td></tr>
+        <tr class= "passed"><th>Passed:</th><td>5</td></tr>
         <tr class= "skipped"><th>Skipped:</th><td>0</td></tr>
         <tr class= "failed"><th>Failed:</th><td>0</td></tr>
-        <tr class= "duration"><th>Duration:</th><td>0.1930222 seconds</td></tr>
-        <tr class= "date"><th>Time Finished:</th><td>2020-12-30 13:19:58 +0100</td></tr>
+        <tr class= "duration"><th>Duration:</th><td>0.3300222 seconds</td></tr>
+        <tr class= "date"><th>Time Finished:</th><td>2020-12-30 17:23:40 +0100</td></tr>
       </table>
       <span id="inspec-version">Chef InSpec version 4.24.8</span>
     </div>

@@ -3,7 +3,7 @@
     "src_image_name": "elegoev/ubuntu-18.04",
     "src_image_version": "2.0.1609256225",
     "image_name": "ubuntu-18.04-dnsmasq",
-    "image_version": "2.0.{{timestamp}}",
+    "image_version": "3.0.{{timestamp}}",
     "cloud_token": "{{ env `PACKER_VAGRANTCLOUD_TOKEN` }}",
     "inspec_profile": "baseline-ubuntu-18.04-dnsmasq",
     "inspec_report": "/inspec/inspec_html_report/baseline-ubuntu-18.04-dnsmasq_report.html",
@@ -27,8 +27,8 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "./packer/files",
-      "destination": "/home/vagrant/provision"
+      "source": "./packer/files-prov",
+      "destination": "/home/vagrant/files-prov"
     },
     {
       "type": "shell",

@@ -1,12 +1,12 @@
 # Change Log
 
-## 1.0.x
+## 2.x.x
 
 **Implemented enhancements:**
 
 - DNSMASQ installation
 
-## 2.0.x
+## 3.0.x
 
 **Implemented enhancements:**
 

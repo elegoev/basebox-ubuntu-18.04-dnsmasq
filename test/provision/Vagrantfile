@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
       end
 
       # file provisioning
-      machine.vm.provision "file", source: "../../packer/files", destination: "/home/vagrant/provision/files"
+      machine.vm.provision "file", source: "../../packer/files-prov", destination: "/home/vagrant/files-prov"
       
       # shell provisioning
       scriptlist.each { |scriptpath|
