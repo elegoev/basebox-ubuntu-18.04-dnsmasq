@@ -1,6 +1,7 @@
 #!/bin/bash
 
 provision_dir="/home/vagrant/files-prov"
+application_file_path="/vagrant/installed-application.md"
 
 # install dnsmasq
 sudo apt-get install -y dnsmasq
@@ -28,6 +29,6 @@ sudo rm -rf $provision_dir
 
 # set version
 DNSMASQ_VERSION=$(dnsmasq --version | grep "Dnsmasq version" | awk  '{print $3}')
-echo "# Installed application   "  > /vagrant/installed_application.md
-echo "***                       " >> /vagrant/installed_application.md
-echo "> dnsmasq $DNSMASQ_VERSION" >> /vagrant/installed_application.md
+echo "# Installed application   "  > $application_file_path
+echo "***                       " >> $application_file_path
+echo "> dnsmasq $DNSMASQ_VERSION" >> $application_file_path
