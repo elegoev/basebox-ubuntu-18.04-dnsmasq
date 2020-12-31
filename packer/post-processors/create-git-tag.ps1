@@ -1,7 +1,6 @@
 # create git tag
 
-# $src_image_version = $env:IMAGE_VERSION
-$src_image_version = "3.0.12345"
+$src_image_version = $env:IMAGE_VERSION
 
 $vagrant_file_template = '
 Vagrant.configure("2") do |config|
