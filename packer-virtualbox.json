@@ -10,18 +10,20 @@
     "github_repo": "https://github.com/elegoev/basebox-ubuntu-18.04-dnsmasq",
     "github_repo_version": "{{user `github_repo`}}/tree/{{user `image_version`}}",
     "github_inspec_report": "{{user `github_repo`}}/blob/{{user `image_version`}}{{user `inspec_report`}}",
+    "vagrant_template": "./packer/files-prov/template/Vagrantfile",
     "vagrantcloud_base_image": "https://app.vagrantup.com/elegoev/boxes/ubuntu-18.04/versions/{{user `src_image_version`}}"
   },
   "builders": [
     {
+      "type": "vagrant",
       "communicator": "ssh",
       "source_path": "{{user `src_image_name`}}",
       "box_version": "{{user `src_image_version`}}",
       "output_dir": "packer_build_dir",
+      "template": "{{user `vagrant_template`}}",
       "box_name": "basebox-{{user `image_name`}}",
       "provider": "virtualbox",
-      "add_force": true,
-      "type": "vagrant"
+      "add_force": true
     }
   ],
   "provisioners": [

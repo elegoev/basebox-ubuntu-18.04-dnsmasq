@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
       
       # shell provisioning
       scriptlist.each { |scriptpath|
-        machine.vm.provision :shell, :run => 'never' do |cfg|
+        machine.vm.provision :shell do |cfg|
           cfg.name = File.basename(scriptpath)
           cfg.path = scriptpath
         end        

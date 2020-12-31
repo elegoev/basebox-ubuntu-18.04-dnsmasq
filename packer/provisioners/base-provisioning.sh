@@ -28,4 +28,6 @@ sudo rm -rf $provision_dir
 
 # set version
 DNSMASQ_VERSION=$(dnsmasq --version | grep "Dnsmasq version" | awk  '{print $3}')
-# echo "$DNSMASQ_VERSION" > /vagrant/version
+echo "# Installed application   "  > /vagrant/installed_application.md
+echo "***                       " >> /vagrant/installed_application.md
+echo "> dnsmasq $DNSMASQ_VERSION" >> /vagrant/installed_application.md
