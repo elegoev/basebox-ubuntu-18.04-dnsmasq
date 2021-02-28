@@ -1,7 +1,7 @@
 {
   "variables": {
     "src_image_name": "elegoev/ubuntu-18.04",
-    "src_image_version": "2.0.1609256225",
+    "src_image_version": "2.0.1614509667",
     "image_name": "ubuntu-18.04-dnsmasq",
     "image_version": "3.0.{{timestamp}}",
     "cloud_token": "{{ env `PACKER_VAGRANTCLOUD_TOKEN` }}",

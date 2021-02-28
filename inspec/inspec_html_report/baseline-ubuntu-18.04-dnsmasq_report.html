@@ -215,11 +215,11 @@ function  pageLoaded() {
     <div class="inspec-report">
     <h1>Chef InSpec Report</h1>
     
-      <div class="profile " id="profile-baseline-ubuntu-18.04">
+      <div class="profile " id="profile-baseline-ubuntu-18.04-dnsmasq">
   
-  <h2 class="profile_title">Profile profile for vagrant image baseline-ubuntu-18.04 (baseline-ubuntu-18.04)</h2>
+  <h2 class="profile_title">Profile profile for vagrant image ubuntu-18.04-dnsmasq (baseline-ubuntu-18.04-dnsmasq)</h2>
 
-  <table class="profile-metadata info" id="profile-metadata-baseline-ubuntu-18.04">
+  <table class="profile-metadata info" id="profile-metadata-baseline-ubuntu-18.04-dnsmasq">
     <tr class="profile-version"><th>Version:</th><td>1.0.0</td></tr>
     
     <tr class="profile-summary"><th>Summary:</th><td>vagrant baseline checks</td></tr>
@@ -278,7 +278,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0005079 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0002474 seconds</td></tr>
   </table>
 </div>
 
@@ -336,7 +336,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0660632 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0509523 seconds</td></tr>
   </table>
 </div>
 
@@ -349,63 +349,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0002493 seconds</td></tr>
-  </table>
-</div>
-
-  
-
-</div>
-
-    
-      
-
-
-<div class="control control-status-passed" id="control-dnsmasq-3.0">
-
-  
-
-  <h3 class="control-title">Control <code>dnsmasq-3.0</code></h3>
-  <table class="control-metadata info" id="control-metadata-dnsmasq-3.0">
-    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
-    <tr class="title"><th>Title:</th><td>check dnsmasq port</td></tr> 
-    <tr class="desc"><th>Description:</th><td>check dnsmasq port</td></tr> 
-    <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
-    
-    
-    <tr class="code">
-      <th>Source Code:</th>
-      <td>
-        <input type="button" class="show-source-code" id="show-code-dnsmasq-3.0" value="Show Source"/>
-        <input type="button" class="hide-source-code hidden" id="hide-code-dnsmasq-3.0" value="Hide Source"/>
-        <pre class="source-code hidden" id="source-code-dnsmasq-3.0">
-          <code>
-control "dnsmasq-3.0" do                    
-  impact 1.0                                
-  title "check dnsmasq port"     
-  desc "check dnsmasq port"
-  describe port(53) do
-    it { should be_listening }
-  end
-end
-          </code>
-        </pre>
-      </td>
-    </tr>
-  <!-- TODO waiver data -->
-
-  </table>
-
-  
-    
-<div class="result" id="result-Port_53">
-  <h4 class="resource-title">Resource <code>Port 53</code></h4>
-  <table class="result-metadata info">
-    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be listening</code></td></tr>
-    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
-    
-    
-    <tr class="duration"><th>Duration:</th><td>0.1604824 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0001449 seconds</td></tr>
   </table>
 </div>
 
@@ -462,7 +406,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.1135142 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.1113289 seconds</td></tr>
   </table>
 </div>
 
@@ -519,7 +463,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0561787 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0302905 seconds</td></tr>
   </table>
 </div>
 
@@ -538,15 +482,15 @@ end
         <tr><th colspan=2><h4 id="platform-label">Platform Information</h4></th></tr>
         <tr class= "name"><th>Name:</th><td>ubuntu</td></tr>
         <tr class= "release"><th>Release:</th><td>18.04</td></tr>
-        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-1909\cxtla@127.0.0.1:62939</td></tr>
+        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-20H2\cxtla@127.0.0.1:57504</td></tr>
       </table>
       <table id="statistics" class="info">
         <tr><th colspan="2"><h4 id="statistics-label">Control Statistics</h4></th></tr>
-        <tr class= "passed"><th>Passed:</th><td>5</td></tr>
+        <tr class= "passed"><th>Passed:</th><td>4</td></tr>
         <tr class= "skipped"><th>Skipped:</th><td>0</td></tr>
         <tr class= "failed"><th>Failed:</th><td>0</td></tr>
-        <tr class= "duration"><th>Duration:</th><td>0.4096622 seconds</td></tr>
-        <tr class= "date"><th>Time Finished:</th><td>2020-12-31 13:20:00 +0100</td></tr>
+        <tr class= "duration"><th>Duration:</th><td>0.2043637 seconds</td></tr>
+        <tr class= "date"><th>Time Finished:</th><td>2021-02-28 12:41:39 +0100</td></tr>
       </table>
       <span id="inspec-version">Chef InSpec version 4.24.8</span>
     </div>

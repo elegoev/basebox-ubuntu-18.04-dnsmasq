@@ -22,13 +22,3 @@ control "dnsmasq-2.0" do
     its('exit_status') { should eq 0 }
   end
 end
-
-# check dnsmasq port
-control "dnsmasq-3.0" do                    
-  impact 1.0                                
-  title "check dnsmasq port"     
-  desc "check dnsmasq port"
-  describe port(53) do
-    it { should be_listening }
-  end
-end
