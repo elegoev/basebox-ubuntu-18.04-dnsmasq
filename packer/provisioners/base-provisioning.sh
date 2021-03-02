@@ -24,9 +24,6 @@ sudo dnsmasq --test
 # restart dnsmasq
 sudo systemctl restart dnsmasq
 
-# cleanup provisioning files
-sudo rm -rf $provision_dir
-
 # set version
 DNSMASQ_VERSION=$(dnsmasq --version | grep "Dnsmasq version" | awk  '{print $3}')
 echo "# Installed application   "  > $application_file_path

@@ -2,9 +2,9 @@ Vagrant.configure("2") do |config|
 
     $basebox_name="basebox-ubuntu-18.04-dnsmasq-test"
     $basebox_hostname="ubuntu-1804-dnsmasq-test"
-    $src_image_name="elegoev/ubuntu-18.04"
-    $src_image_version="2.0.1609256225"
-
+    $src_image_name="#{ENV["SRC_IMAGE_NAME"]}"
+    $src_image_version="#{ENV["SRC_IMAGE_VERSION"]}"
+  
     config.vm.define "#{$basebox_name}" do |machine|
       machine.vm.box = "#{$src_image_name}"
       machine.vm.box_version = "#{$src_image_version}"
@@ -24,7 +24,8 @@ Vagrant.configure("2") do |config|
       end
 
       # file provisioning
-      machine.vm.provision "file", source: "../../packer/files-prov", destination: "/home/vagrant/files-prov"
+      # machine.vm.provision "file", source: "../../packer/files-prov", destination: "/home/vagrant/files-prov"
+      machine.vm.synced_folder "../../packer/files-prov", "/home/vagrant/files-prov"
     
       # shell provisioning
       machine.vm.provision :shell do |cfg|
