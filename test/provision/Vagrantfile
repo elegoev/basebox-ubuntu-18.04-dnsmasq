@@ -9,7 +9,9 @@ Vagrant.configure("2") do |config|
       machine.vm.box = "#{$src_image_name}"
       machine.vm.box_version = "#{$src_image_version}"
     
-      # define guest hostname
+      # define guest hostname    $src_image_name="#{ENV["SRC_IMAGE_NAME"]}"
+    $src_image_version="#{ENV["SRC_IMAGE_VERSION"]}"
+
       machine.vm.hostname = "#{$basebox_hostname}"
 
       machine.vm.provider "virtualbox" do |vb|
