@@ -4,7 +4,16 @@ provision_dir="/home/vagrant/files-prov"
 application_file_path="/vagrant/installed-application.md"
 
 # install dnsmasq
-sudo apt-get install -y dnsmasq
+while :
+do
+  sudo apt-get install -y dnsmasq
+  retcode=$?
+  if [ $retcode -eq 0 ]; then
+    break
+  fi
+  echo "sleep 5s ..."
+  sleep 5
+done
 sudo cp $provision_dir/dnsmasq/dnsmasq.conf /etc/dnsmasq.conf
 
 # disable systemd-resolved

@@ -278,7 +278,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0011847 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0003596 seconds</td></tr>
   </table>
 </div>
 
@@ -336,7 +336,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0368238 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0414299 seconds</td></tr>
   </table>
 </div>
 
@@ -349,7 +349,92 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0001332 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0001232 seconds</td></tr>
+  </table>
+</div>
+
+  
+
+</div>
+
+    
+      
+
+
+<div class="control control-status-passed" id="control-dnsmasq-3.0">
+
+  
+
+  <h3 class="control-title">Control <code>dnsmasq-3.0</code></h3>
+  <table class="control-metadata info" id="control-metadata-dnsmasq-3.0">
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    <tr class="title"><th>Title:</th><td>check if dnsmasq is running</td></tr> 
+    <tr class="desc"><th>Description:</th><td>check dnsmasq service</td></tr> 
+    <tr class="impact impact-high"><th>Impact:</th><td>1.0</td></tr> 
+    
+    
+    <tr class="code">
+      <th>Source Code:</th>
+      <td>
+        <input type="button" class="show-source-code" id="show-code-dnsmasq-3.0" value="Show Source"/>
+        <input type="button" class="hide-source-code hidden" id="hide-code-dnsmasq-3.0" value="Hide Source"/>
+        <pre class="source-code hidden" id="source-code-dnsmasq-3.0">
+          <code>
+control "dnsmasq-3.0" do                    # A unique ID for this control
+  impact 1.0                                # The criticality, if this control fails.
+  title "check if dnsmasq is running"       # A human-readable title
+  desc "check dnsmasq service"
+  describe service('dnsmasq') do
+    it { should be_installed }
+    it { should be_enabled }
+    it { should be_running }
+  end
+end
+
+          </code>
+        </pre>
+      </td>
+    </tr>
+  <!-- TODO waiver data -->
+
+  </table>
+
+  
+    
+<div class="result" id="result-Service_dnsmasq">
+  <h4 class="resource-title">Resource <code>Service dnsmasq</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be installed</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>0.0878599 seconds</td></tr>
+  </table>
+</div>
+
+  
+    
+<div class="result" id="result-Service_dnsmasq">
+  <h4 class="resource-title">Resource <code>Service dnsmasq</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be enabled</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>0.000223 seconds</td></tr>
+  </table>
+</div>
+
+  
+    
+<div class="result" id="result-Service_dnsmasq">
+  <h4 class="resource-title">Resource <code>Service dnsmasq</code></h4>
+  <table class="result-metadata info">
+    <tr class="expectation_message"><th>Test:</th><td><code>is expected to be running</code></td></tr>
+    <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
+    
+    
+    <tr class="duration"><th>Duration:</th><td>9.11e-05 seconds</td></tr>
   </table>
 </div>
 
@@ -406,7 +491,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.1331023 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.1132894 seconds</td></tr>
   </table>
 </div>
 
@@ -463,7 +548,7 @@ end
     <tr class="status status-passed"><th>Status:</th><td><div>Passed</div></td></tr>
     
     
-    <tr class="duration"><th>Duration:</th><td>0.0376937 seconds</td></tr>
+    <tr class="duration"><th>Duration:</th><td>0.0308526 seconds</td></tr>
   </table>
 </div>
 
@@ -482,15 +567,15 @@ end
         <tr><th colspan=2><h4 id="platform-label">Platform Information</h4></th></tr>
         <tr class= "name"><th>Name:</th><td>ubuntu</td></tr>
         <tr class= "release"><th>Release:</th><td>18.04</td></tr>
-        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-20H2\cxtla@127.0.0.1:55179</td></tr>
+        <tr class= "target"><th>Target:</th><td>ssh://ELEGOEV-20H2\cxtla@127.0.0.1:56128</td></tr>
       </table>
       <table id="statistics" class="info">
         <tr><th colspan="2"><h4 id="statistics-label">Control Statistics</h4></th></tr>
-        <tr class= "passed"><th>Passed:</th><td>4</td></tr>
+        <tr class= "passed"><th>Passed:</th><td>5</td></tr>
         <tr class= "skipped"><th>Skipped:</th><td>0</td></tr>
         <tr class= "failed"><th>Failed:</th><td>0</td></tr>
-        <tr class= "duration"><th>Duration:</th><td>0.2388755 seconds</td></tr>
-        <tr class= "date"><th>Time Finished:</th><td>2021-03-03 17:17:28 +0100</td></tr>
+        <tr class= "duration"><th>Duration:</th><td>0.2855714 seconds</td></tr>
+        <tr class= "date"><th>Time Finished:</th><td>2021-03-03 18:58:44 +0100</td></tr>
       </table>
       <span id="inspec-version">Chef InSpec version 4.24.8</span>
     </div>

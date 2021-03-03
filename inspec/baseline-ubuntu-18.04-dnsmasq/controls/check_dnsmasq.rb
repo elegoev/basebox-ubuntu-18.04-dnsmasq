@@ -22,3 +22,15 @@ control "dnsmasq-2.0" do
     its('exit_status') { should eq 0 }
   end
 end
+
+# check dnsmasq service
+control "dnsmasq-3.0" do                    # A unique ID for this control
+  impact 1.0                                # The criticality, if this control fails.
+  title "check if dnsmasq is running"       # A human-readable title
+  desc "check dnsmasq service"
+  describe service('dnsmasq') do
+    it { should be_installed }
+    it { should be_enabled }
+    it { should be_running }
+  end
+end
