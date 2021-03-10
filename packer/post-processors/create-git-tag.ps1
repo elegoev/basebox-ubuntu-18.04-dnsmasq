@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
       trigger.run = {path: "./cleanup-vagrant.ps1"}  
     end
 
-    end   
+  end   
 
 end
 '
